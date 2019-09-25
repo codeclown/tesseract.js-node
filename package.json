@@ -1,4 +1,7 @@
 {
+  "name": "tesseract.js-node",
+  "version": "0.0.0",
+  "main": "src/index.js",
   "dependencies": {
     "tesseract.js-core": "^2.0.0-beta.11"
   },
