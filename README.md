@@ -5,7 +5,7 @@ A focused node-only version of tesseract.js.
 
 ## Why?
 
-[tesseract.js](https://github.com/naptha/tesseract.js) is developed for both node and browser, and includes (in my opinion) bloated functionality like automatical downloading of traineddata-files in the background.
+[tesseract.js](https://github.com/naptha/tesseract.js) is developed for both node and browser, and includes (in my opinion) bloated functionality like automatic downloading of traineddata-files in the background.
 
 At the time of writing, it also does not have any tests for node-environment (only browser). Example issue where this matters: https://github.com/naptha/tesseract.js/issues/339.
 
