@@ -1,4 +1,5 @@
 const assert = require('assert');
+const fs = require('fs');
 const path = require('path');
 const getWorker = require('../src/index');
 
@@ -56,5 +57,21 @@ describe('getWorker', () => {
     assert.equal(eng, 'Morko\n');
     const fin = await worker.recognize(umlauts, 'fin');
     assert.equal(fin, 'Mörkö\n');
+  });
+
+  it('accepts Buffer', async () => {
+    const worker = await getWorker({ tessdata, languages: ['eng'] });
+    const text = await worker.recognize(fs.readFileSync(word), 'eng');
+    assert.equal(text, 'Cool\n');
+  });
+
+  it('throws on unexpected image type', async () => {
+    try {
+      const worker = await getWorker({ tessdata, languages: ['eng'] });
+      const text = await worker.recognize(null, 'eng');
+      assert.fail();
+    } catch (exception) {
+      assert.equal(exception.message, 'Invalid input type (expected a string of a Buffer, got object)');
+    }
   });
 });

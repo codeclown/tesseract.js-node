@@ -39,8 +39,16 @@ const getWorker = options => {
     })
     .then(TessModule => {
       return {
-        recognize: (imagePath, language) => {
-          const image = fs.readFileSync(imagePath);
+        recognize: (input, language) => {
+          let image;
+          if (typeof input === 'string') {
+            image = fs.readFileSync(input);
+          } else if (Buffer.isBuffer(input)) {
+            image = input;
+          } else {
+            throw new Error(`Invalid input type (expected a string of a Buffer, got ${typeof input})`);
+          }
+
           const pointer = TessModule._malloc(image.length * Uint8Array.BYTES_PER_ELEMENT);
           TessModule.HEAPU8.set(image, pointer);
           const pix = TessModule._pixReadMem(pointer, image.length);

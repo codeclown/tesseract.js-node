@@ -34,6 +34,17 @@ const worker = await getWorker({
 const text = await worker.recognize('/path/to/image', 'eng');
 ```
 
+You can supply the input image in various ways:
+
+```js
+// path to image
+const text = await worker.recognize('/path/to/image', 'eng');
+// Buffer
+const text = await worker.recognize(fs.readFileSync('/path/to/image'), 'eng');
+// Buffer (from node-canvas)
+const text = await worker.recognize(canvas.toBuffer('image/png'), 'eng');
+```
+
 See [tesseract.test.js](test/tesseract.test.js) for other examples.
 
 
