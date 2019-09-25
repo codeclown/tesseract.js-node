@@ -59,3 +59,13 @@ Useful resources:
 - https://tesseract-ocr.github.io/4.0.0/a02186.html#a96899e8e5358d96752ab1cfc3bc09f3e
 - https://github.com/naptha/tesseract.js-core/blob/v2.0.0-beta.11/examples/node/minimal/index.asm.js
 - https://github.com/jeromewu/tesseract.js-utils/blob/b5fba24a8ffcdd88302b5709a1023330138a281e/src/readImage.js
+
+
+## Credits
+
+Thanks to [tesseract.js-core](https://github.com/naptha/tesseract.js-core) contributors for the groundwork!
+
+
+## License
+
+Apache License 2.0
