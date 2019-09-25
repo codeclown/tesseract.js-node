@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "tesseract.js-core": "^2.0.0-beta.11"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 5000"
+  }
+}
